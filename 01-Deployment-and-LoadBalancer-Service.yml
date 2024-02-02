@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1-myapp
-          image: venacraks.azurecr.io/venkatpinnamarajuwebapp:52
+          image: venacraks.azurecr.io/venkatpinnamarajuwebapp:53
           ports:
             - containerPort: 80
 ---
