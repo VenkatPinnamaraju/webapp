@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1-nginx-deployment
+  name: app1-myapp-deployment
   labels:
-    app: app1-nginx
+    app: app1-myapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app1-nginx
+      app: app1-myapp
   template:
     metadata:
       labels:
-        app: app1-nginx
+        app: app1-myapp
     spec:
       containers:
-        - name: app1-nginx
-          image: venacraks.azurecr.io/mydockerapp:51
+        - name: app1-myapp
+          image: venacraks.azurecr.io/venkatpinnamarajuwebapp:52
           ports:
             - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1-nginx-loadbalancer-service
+  name: app1-myapp-loadbalancer-service
   labels:
-    app: app1-nginx
+    app: app1-myapp
 spec:
   type: LoadBalancer
   selector:
-    app: app1-nginx
+    app: app1-myapp
   ports:
     - port: 80
       targetPort: 80
