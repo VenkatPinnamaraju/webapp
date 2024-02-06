@@ -34,7 +34,7 @@ resource "azurerm_kubernetes_cluster" "ven1_aks" {
   dns_prefix          = var.aks_cluster_name
 
   default_node_pool {
-    name       = "venpool1"
+    name       = var.aks_cluster_name
     node_count = 1
     vm_size    = "Standard_D2_v2"
   }
