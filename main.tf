@@ -1,4 +1,4 @@
-terraform {
+poterraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
@@ -34,8 +34,8 @@ resource "azurerm_kubernetes_cluster" "ven1_aks" {
   dns_prefix          = var.aks_cluster_name
 
   default_node_pool {
-    name       = var.aks_cluster_name
-    node_count = 1
+    name       = venpool12
+    node_count = 2
     vm_size    = "Standard_D2_v2"
   }
 
