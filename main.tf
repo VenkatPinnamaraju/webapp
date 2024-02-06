@@ -5,12 +5,7 @@ terraform {
       version = ">=3.0"
     }
   }
-backend "azurerm" {
-    resource_group_name = "ven-stg"
-    storage_account_name = "venstg123"
-    container_name = "vennew"
-    key = "terraform.tfstate"
-  }
+
 }
 
 provider "azurerm" {
