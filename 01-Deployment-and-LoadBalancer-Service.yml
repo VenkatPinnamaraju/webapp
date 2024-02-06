@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1-myapp
-          image: venacraks.azurecr.io/venkatpinnamarajuwebapp:53
+          image: venacraks.azurecr.io/venkatpinnamarajuwebapp:$(Build.BuildId)
           ports:
             - containerPort: 8080
 ---
@@ -31,7 +31,7 @@ spec:
   selector:
     app: app1-myapp
   ports:
-    - port: 8081
+    - port: 8085
       targetPort: 8080
 
 
