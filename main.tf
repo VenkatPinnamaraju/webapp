@@ -22,10 +22,10 @@ resource "azurerm_resource_group" "ven1_aks_rg" {
 }
 
 resource "azurerm_kubernetes_cluster" "ven1_aks" {
-  name                = format("ven1-aks-%s", var.aks_cluster_name)
+  name                = var.aks_cluster_name
   location            = azurerm_resource_group.ven1_aks_rg.location
   resource_group_name = azurerm_resource_group.ven1_aks_rg.name
-  dns_prefix          = format("ven-aks-%s", var.aks_cluster_name)
+  dns_prefix          = var.aks_cluster_name
 
   default_node_pool {
     name       = "venpool1"
